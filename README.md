@@ -20,3 +20,6 @@ git
 [My website] ('https://mutisya-cindy.github.io/phase-one-project/')
 
 ### Licence
+MIT License
+
+### copyright
