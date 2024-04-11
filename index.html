@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail Order</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Cocktail menu and Their Recipies</h1>
+  
+  <div id="cocktail-list">
+    
+  </div>
+    
+  <h2>Create Your Own Cocktail Recipe</h2>
+  <form id="cocktail-form">
+    <label for="cocktail-name">Cocktail Name:</label>
+    <input type="text" id="cocktail-name" required>
+    <label for="cocktail-recipe">Recipe:</label>
+    <textarea id="cocktail-recipe" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  
+
+  <h2>Place Your Order Here</h2>
+  <form id="order-form">
+    <label for="order-name">Name:</label>
+    <input type="text" id="order-name" name="order-name"><br><br>
+    
+    <label for="order-cocktail">Cocktail:</label>
+    <input type="text" id="order-cocktail" name="order-cocktail"><br><br>
+    
+    <label for="other-preferences">Other Preferences:</label>
+    <input type="text" id="other-preferences" name="other-preferences"><br><br>
+    
+    <button type="submit">Place Order</button>
+</form>
+  
+
+  <h2>User Authentication</h2>
+  <div id="auth-container">
+    <form id="login-form">
+      <h3>Login</h3>
+      <label for="login-username">Username:</label>
+      <input type="text" id="login-username" required>
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" required>
+      <button type="submit">Login</button>
+    </form>
+    <form id="logout-form" style="display: none;">
+      <h3>Welcome, <span id="user-username"></span>!</h3>
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
