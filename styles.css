@@ -21,7 +21,7 @@ body {
     justify-content: center;
     gap: 20px;
     color: white;
-text-shadow: 2px 2px 4px rgba(240, 15, 228, 0.952)
+text-shadow: 4px 4px 8px rgba(240, 15, 228, 0.952)
   }
   .cocktail-item {
     width: 200px;
