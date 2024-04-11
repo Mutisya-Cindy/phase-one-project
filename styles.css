@@ -43,3 +43,11 @@ text-shadow: 2px 2px 4px rgba(240, 15, 228, 0.952)
     border-radius: 8px;
     margin-top: 10px;
   }
+
+  h2 {
+    text-align:left;
+    color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    text-shadow:2px 2px 4px rgb(16, 160, 160) ;
+  }
