@@ -23,3 +23,4 @@ git
 MIT License
 
 ### copyright
+Copyright (c) 2024 Mutisya-Cindy
