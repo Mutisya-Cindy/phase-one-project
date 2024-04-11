@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
             preferences: otherPreferences
         };
   
-        // sending the order to the server
+        // sending the order to the server after submitting your order
         console.log('Order placed:', order);
   
         // reset after an order is placed so as to refresh the page
