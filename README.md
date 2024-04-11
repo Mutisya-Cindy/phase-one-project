@@ -18,3 +18,5 @@ git
 
 ### Live link
 [My website] ('https://mutisya-cindy.github.io/phase-one-project/')
+
+### Licence
