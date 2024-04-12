@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+//ensure the  DOM is fully loadec and declaration of two variables to store data
+  document.addEventListener("DOMContentLoaded", function() {
     const cocktailList = document.getElementById("cocktail-list");
     const users = []; 
   
-    // Function to fetch cocktails from the API
+    // Function to fetch cocktails from the API to make a GET request
     function collectCocktails() {
         fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
             .then(response => response.json())
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
   
-    // Function to create a cocktail articles
+    // Function to create a cocktail articles and addition of edit and delete to be able to interact  with the cocktails
     function createCocktailObject(cocktail) {
         const cocktailItem = document.createElement('div');
         cocktailItem.classList.add('cocktail-item');
@@ -40,17 +41,53 @@ document.addEventListener("DOMContentLoaded", function() {
         // Add event listener to edit button to enable user to edit the recipe
         const editButton = cocktailItem.querySelector('.edit-btn');
         editButton.addEventListener('click', function() {
-            // Get current values
+            // Get current values by selecting h2 elements in the html file 
             const name = cocktailItem.querySelector('h2').textContent;
             const instructions = cocktailItem.querySelector('p').textContent;
   
-            // Prompt user for new values
+            // Prompt user for new values so as to enable them to add new values
             const newName = prompt("Enter new name:", name);
             const newInstructions = prompt("Enter new instructions:", instructions);
   
             // Update values
             cocktailItem.querySelector('h2').textContent = newName;
             cocktailItem.querySelector('p').textContent = newInstructions;
+        });
+  
+        return cocktailItem;
+    }
+  
+    // Function to handle form submission for creating a new cocktail
+    function createCocktailItem(cocktail) {
+        const cocktailItem = document.createElement('div');
+        cocktailItem.classList.add('cocktail-item');
+        cocktailItem.innerHTML = `
+            <h2>${cocktail.name}</h2>
+            <p>${cocktail.recipe}</p>
+            <button class="delete-btn">Delete</button>
+            <button class="edit-btn">Edit</button>
+        `;
+        // adding  thye edit and delete for the new recipe to work like other ones
+        // Add event listener to delete button
+        const deleteButton = cocktailItem.querySelector('.delete-btn');
+        deleteButton.addEventListener('click', function() {
+            cocktailList.removeChild(cocktailItem);
+        });
+  
+        // Add event listener to edit button
+        const editButton = cocktailItem.querySelector('.edit-btn');
+        editButton.addEventListener('click', function() {
+            // Get current values
+            const name = cocktailItem.querySelector('h2').textContent;
+            const recipe = cocktailItem.querySelector('p').textContent;
+  
+            // Prompt user for new values
+            const newName = prompt("Enter new name:", name);
+            const newRecipe = prompt("Enter new recipe:", recipe);
+  
+            // Update values
+            cocktailItem.querySelector('h2').textContent = newName;
+            cocktailItem.querySelector('p').textContent = newRecipe;
         });
   
         return cocktailItem;
@@ -97,10 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
         // Add the new user to the array of users
         users.push(newUser);
-  
-        // Optionally, you can save the users array to localStorage or a server
-        // localStorage.setItem('users', JSON.stringify(users));
-        // Or send the data to a server for storage
+
   
         // Reset the form
         loginForm.reset();
@@ -108,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     const orderForm = document.getElementById('order-form');
     orderForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission behavior
+        event.preventDefault(); 
   
         // Get the values from the form
         const orderName = document.getElementById('order-name').value;
@@ -131,4 +165,4 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Calling the fetched function
     collectCocktails();
-  });
+});
