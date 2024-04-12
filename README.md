@@ -24,8 +24,5 @@ git
 ### Live link
 [My website] ('https://mutisya-cindy.github.io/phase-one-project/')
 
-### Licence
-MIT License
-
-### copyright
-Copyright (c) 2024 Mutisya-Cindy
+### Licence 
+The content of this site is licensed under the MIT license Copyright (c) 2024.
