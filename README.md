@@ -2,7 +2,7 @@
 ##### project name
 Cocktail bar
 
-### By:
+#### By:
 Cindy Mutisya
 
 ### Description
